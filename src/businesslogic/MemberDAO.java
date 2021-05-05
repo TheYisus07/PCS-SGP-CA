@@ -26,7 +26,7 @@ public class MemberDAO implements IMemberDAO{
             Statement statement = connection.getConnection().createStatement();
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
-                 arrayListMembers.add(new Member(resultSet.getString("FullName"), resultSet.getDate("DateOfBirth"), resultSet.getString("CURP"), resultSet.getString("PhoneNumber"), resultSet.getString("InstitutionalMail"), resultSet.getString("Discipline"), resultSet.getString("StudyGrade"), resultSet.getString("StudyArea"),resultSet.getString("TypeOfTeaching"), resultSet.getString("LGAC"), resultSet.getString("IES"), resultSet.getBoolean("ProdepParticipation"), resultSet.getString("Position"), resultSet.getString("academicGroup_Keycode"))); 
+                 arrayListMembers.add(new Member(resultSet.getString("FullName"), resultSet.getDate("DateOfBirth"), resultSet.getString("CURP"), resultSet.getString("PhoneNumber"), resultSet.getString("InstitutionalMail"), resultSet.getString("Discipline"), resultSet.getString("StudyGrade"), resultSet.getString("StudyArea"),resultSet.getString("TypeOfTeaching"), resultSet.getString("LGAC"), resultSet.getString("IES"), resultSet.getString("ProdepParticipation"), resultSet.getString("Position"), resultSet.getString("academicGroup_Keycode"))); 
             }
         } catch (SQLException ex) {
             Logger.getLogger(MemberDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -80,7 +80,7 @@ public class MemberDAO implements IMemberDAO{
             preparedStatement.setString(9, member.getTypeOfTeaching());
             preparedStatement.setString(10, member.getLgac());
             preparedStatement.setString(11, member.getIes());
-            preparedStatement.setBoolean(12, member.isProdepParticipation());
+            preparedStatement.setString(12, member.getProdepParticipation());
             preparedStatement.setString(13, member.getPosition());
             preparedStatement.setString(14, member.getKeycodeAcademicGroup());
             preparedStatement.executeUpdate();

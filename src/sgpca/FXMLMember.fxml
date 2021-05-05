@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="850.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="sgpca.ControllerMember">
+    <children>
+      <AnchorPane prefHeight="55.0" prefWidth="850.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label layoutX="31.0" layoutY="7.0" prefHeight="50.0" prefWidth="266.0" style="-fx-font-weight: bold; -fx-font-size: 20px;" text="Currículum del CA: Edición " textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="43.0" fitWidth="39.0" layoutX="590.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/user.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="30.0" layoutY="73.0" prefHeight="55.0" prefWidth="780.0" style="-fx-background-color: #D6DBDF;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+         <children>
+            <Label layoutX="20.0" layoutY="5.0" style="-fx-font-weight: bold; -fx-font-size: 35px;" text="REGISTRO" />
+            <Button fx:id="buttonRegisterMember" layoutX="663.0" layoutY="10.0" mnemonicParsing="false" onAction="#RegisterMemberButton" style="-fx-font-weight: bold; -fx-font-size: 18px;" text="Registrar" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="43.0" layoutY="141.0" prefHeight="540.0" prefWidth="790.0" style="-fx-background-color: #7F8C8D;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+         <children>
+            <Button layoutX="4.0" layoutY="495.0" mnemonicParsing="false" style="-fx-font-weight: bold; -fx-font-size: 18px;" text="Cancelar" />
+            <AnchorPane layoutX="13.0" layoutY="12.0" prefHeight="479.0" prefWidth="768.0" style="-fx-background-color: #FDFEFE; -fx-border-color: #000000; -fx-border-width: 3px;">
+               <children>
+                  <AnchorPane layoutX="3.0" layoutY="2.0" prefHeight="42.0" prefWidth="750.0" style="-fx-border-color: #000000; -fx-border-width: 1px;" AnchorPane.bottomAnchor="440.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="282.0" layoutY="5.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Cargo en Cuerpo Académico: " />
+                        <ComboBox fx:id="comboBoxMemberPosition" layoutX="496.0" layoutY="4.0" prefHeight="25.0" prefWidth="257.0" promptText="Seleccione una opción" />
+                     </children>
+                  </AnchorPane>
+                  <TextField fx:id="textFieldMemberName" layoutX="242.0" layoutY="44.0" prefHeight="25.0" prefWidth="500.0" promptText="Javier Alberto Calderón Blas" />
+                  <Label layoutX="15.0" layoutY="48.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Nombre:" />
+                  <Label layoutX="15.0" layoutY="77.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Fecha de nacimiento:" />
+                  <Label layoutX="15.0" layoutY="112.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="CURP:" />
+                  <Label layoutX="15.0" layoutY="176.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Correo institucional:" />
+                  <Label layoutX="15.0" layoutY="243.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Grado de estudios:" />
+                  <Label layoutX="15.0" layoutY="144.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Número teléfonico:" />
+                  <Label layoutX="15.0" layoutY="209.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Disciplina:" />
+                  <Label layoutX="16.0" layoutY="421.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Código de CA:" />
+                  <Label layoutX="16.0" layoutY="332.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="LGAC:" />
+                  <Label layoutX="16.0" layoutY="362.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="IES:" />
+                  <Label layoutX="15.0" layoutY="303.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Tipo de docencia:" />
+                  <Label layoutX="15.0" layoutY="391.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Participación con PRODEP:" />
+                  <Label layoutX="16.0" layoutY="273.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Área de estudios:" />
+                  <TextField fx:id="textFieldMemberCURP" layoutX="242.0" layoutY="110.0" prefHeight="25.0" prefWidth="500.0" promptText="CABJ01721HVZLNQO3" />
+                  <TextField fx:id="textFieldMemberPhoneNumber" layoutX="241.0" layoutY="142.0" prefHeight="25.0" prefWidth="500.0" promptText="2288665544" />
+                  <TextField fx:id="textFieldMemberInsstitutionalEmail" layoutX="241.0" layoutY="171.0" prefHeight="25.0" prefWidth="500.0" promptText="zs19014035@estudiantes.uv.mx" />
+                  <TextField fx:id="textFieldMemberDiscipline" layoutX="241.0" layoutY="203.0" prefHeight="25.0" prefWidth="500.0" promptText="Maestría" />
+                  <TextField fx:id="textFieldMemberGradeStudy" layoutX="241.0" layoutY="237.0" prefHeight="25.0" prefWidth="500.0" promptText="Maestría" />
+                  <TextField fx:id="textFieldMemberAreaStudy" layoutX="241.0" layoutY="270.0" prefHeight="25.0" prefWidth="500.0" promptText="Inteligencia artificial" />
+                  <TextField fx:id="textFieldMemberLGAC" layoutX="239.0" layoutY="332.0" prefHeight="25.0" prefWidth="500.0" promptText="Innovación..." />
+                  <TextField fx:id="textFieldMemberIES" layoutX="238.0" layoutY="363.0" prefHeight="25.0" prefWidth="500.0" promptText="Si/No" />
+                  <TextField fx:id="textFieldMemberKeyCode" layoutX="237.0" layoutY="424.0" prefHeight="25.0" prefWidth="500.0" promptText="JDOEIJ804" />
+                  <ComboBox fx:id="comboBoxMemberPRODEP" layoutX="238.0" layoutY="393.0" prefHeight="25.0" prefWidth="263.0" promptText="Seleccione una opción" />
+                  <ComboBox fx:id="comboBoxMemberTypeOfTeaching" layoutX="240.0" layoutY="300.0" prefHeight="25.0" prefWidth="258.0" promptText="Seleccione una opción" />
+                  <DatePicker fx:id="datePickerMemberDateOfBirth" layoutX="242.0" layoutY="75.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

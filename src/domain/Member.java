@@ -17,11 +17,11 @@ public class Member {
     private String typeOfTeaching;
     private String lgac;
     private String ies;
-    private boolean prodepParticipation;
+    private String prodepParticipation;
     private String position;
     private String keycodeAcademicGroup;
 
-    public Member(String fullName, Date dateOfBirth, String curp, String phoneNumber, String institutionalMail, String discipline, String studyGrade, String studyArea, String typeOfTeaching, String lgac, String ies, boolean prodepParticipation, String position, String keycodeAcademicGroup) {
+    public Member(String fullName, Date dateOfBirth, String curp, String phoneNumber, String institutionalMail, String discipline, String studyGrade, String studyArea, String typeOfTeaching, String lgac, String ies, String prodepParticipation, String position, String keycodeAcademicGroup) {
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
         this.curp = curp;
@@ -85,7 +85,7 @@ public class Member {
         return ies;
     }
 
-    public boolean isProdepParticipation() {
+    public String getProdepParticipation() {
         return prodepParticipation;
     }
 
@@ -141,7 +141,7 @@ public class Member {
         this.ies = ies;
     }
 
-    public void setProdepParticipation(boolean prodepParticipation) {
+    public void setProdepParticipation(String prodepParticipation) {
         this.prodepParticipation = prodepParticipation;
     }
 
@@ -152,6 +152,10 @@ public class Member {
     public void setKeycodeAcademicGroup(String keycodeAcademicGroup) {
         this.keycodeAcademicGroup = keycodeAcademicGroup;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Member{" + "fullName=" + fullName + ", dateOfBirth=" + dateOfBirth + ", curp=" + curp + ", phoneNumber=" + phoneNumber + ", institutionalMail=" + institutionalMail + ", discipline=" + discipline + ", studyGrade=" + studyGrade + ", studyArea=" + studyArea + ", typeOfTeaching=" + typeOfTeaching + ", lgac=" + lgac + ", ies=" + ies + ", prodepParticipation=" + prodepParticipation + ", position=" + position + ", keycodeAcademicGroup=" + keycodeAcademicGroup + '}';
+    }
     
 }

@@ -20,7 +20,7 @@ public class MemberTest {
         Member memberResult;
         Date memberDate = new Date((1995-1900), (5-1), 8);
 
-        Member memberObject = new Member("Antonio Domínguez García", memberDate, "DOGA011207HVZMNRA08", "2288657690" , "zs19014049@estudiante.uv.mx", "Maestria", "Cuarto grado", "Innovación", "Completo", "Sí", "Sí", true, "Integrante", "JDOEIJ804");
+        Member memberObject = new Member("Antonio Domínguez García", memberDate, "DOGA011207HVZMNRA08", "2288657690" , "zs19014049@estudiante.uv.mx", "Maestria", "Cuarto grado", "Innovación", "Completo", "Sí", "Sí", "Sí", "Integrante", "JDOEIJ804");
         String fullNameMemberExpected = "Antonio Domínguez García";
         memberResult = member.registerMember(memberObject);
         String memberNew = memberResult.getFullName();
@@ -29,7 +29,7 @@ public class MemberTest {
 
     }
     
-    @Test
+    /*@Test
     public void testRemoveMember() {
         MemberDAO member = new MemberDAO();
         int deleteResult = member.removeMember("Antonio Domínguez García", "DOGA011207HVZMNRA08");
@@ -52,6 +52,6 @@ public class MemberTest {
         memberResult = member.consultMember(memberFullNameExpected);
         String memberFullNameActual = memberResult.getFullName();
         Assert.assertEquals("Prueba obtener miembro", memberFullNameExpected, memberFullNameActual);
-    }
+    }*/
     
 }
