@@ -2,11 +2,13 @@ package businesslogic;
 
 import dataacces.Conection;
 import domain.Member;
+import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,9 +41,10 @@ public class MemberDAO implements IMemberDAO{
 
     @Override
     public Member consultMember(String memberFullName) {
-        String query = "SELECT FullName, CURP, academicGroup_Keycode FROM member WHERE FullName = ?";
-        Member member = null; 
+        Member member = new Member();
         try {
+            connection.connect();
+            String query = "SELECT FullName, CURP, academicGroup_Keycode FROM member WHERE FullName = ?";
             PreparedStatement preparedStatement = connection.getConnection().prepareStatement(query);
             preparedStatement.setString(1, memberFullName);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -61,6 +64,9 @@ public class MemberDAO implements IMemberDAO{
 
     @Override
     public Member registerMember(Member member) {
+        
+        String dateOfBirth = (new SimpleDateFormat("yyyy-MM-dd").format(member.getDateOfBirth()));
+        
         try {
             connection.connect();
         } catch (SQLException ex) {
@@ -70,7 +76,7 @@ public class MemberDAO implements IMemberDAO{
             String query = ("INSERT INTO member (fullName, dateOfBirth, curp, phoneNumber, institutionalMail, discipline, studyGrade, studyArea, typeOfTeaching, lgac, ies, prodepParticipation, position, academicGroup_Keycode) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             PreparedStatement preparedStatement = connection.getConnection().prepareStatement(query);
             preparedStatement.setString(1, member.getFullName());
-            preparedStatement.setDate(2, (Date) member.getDateOfBirth());
+            preparedStatement.setString(2, dateOfBirth);
             preparedStatement.setString(3, member.getCurp());
             preparedStatement.setString(4, member.getPhoneNumber());
             preparedStatement.setString(5, member.getInstitutionalMail());

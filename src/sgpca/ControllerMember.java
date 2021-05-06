@@ -13,6 +13,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import domain.Member;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  *
@@ -36,7 +39,7 @@ public class ControllerMember implements Initializable {
     @FXML
     private TextField textFieldMemberPhoneNumber;
     @FXML
-    private TextField textFieldMemberInsstitutionalEmail;
+    private TextField textFieldMemberInstitutionalEmail;
     @FXML
     private TextField textFieldMemberDiscipline;
     @FXML
@@ -50,15 +53,20 @@ public class ControllerMember implements Initializable {
     @FXML
     private TextField textFieldMemberKeyCode;
     
-    
     @FXML
     private DatePicker datePickerMemberDateOfBirth;
+    
+    ObservableList<Member> memberList;
+    
+    @FXML
+    private Button buttonCancel;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         fillComboBoxWihtMemberPosition();
         fillComboBoxWihtMemberTypeOfTeaching();
         fillComboBoxWihtMemberPRODEP();
+        memberList = FXCollections.observableArrayList();
     }    
     
     @FXML
@@ -81,16 +89,63 @@ public class ControllerMember implements Initializable {
     
     @FXML
     public void RegisterMemberButton(ActionEvent event){
+        memberDAO = new MemberDAO();
+        
         int getDay = datePickerMemberDateOfBirth.getValue().getDayOfMonth();
         int getMonth = datePickerMemberDateOfBirth.getValue().getMonthValue();
         int getYear = datePickerMemberDateOfBirth.getValue().getYear();
         
+        String memberName = textFieldMemberName.getText();
+        String memberCURP = textFieldMemberCURP.getText();
+        String memberPhoneNumber = textFieldMemberPhoneNumber.getText();
+        String memberInstitutionalEmail = textFieldMemberInstitutionalEmail.getText();
+        String memberDiscipline = textFieldMemberDiscipline.getText();
+        String memberGradeStudy = textFieldMemberGradeStudy.getText();
+        String memberAreaStudy = textFieldMemberAreaStudy.getText();
+        String memberTypeOfTeaching = (String) comboBoxMemberTypeOfTeaching.getSelectionModel().getSelectedItem();
+        String memberLGAC = textFieldMemberLGAC.getText();
+        String memberIES = textFieldMemberIES.getText();
+        String memberPRODEP = (String) comboBoxMemberPRODEP.getSelectionModel().getSelectedItem();
+        String memberPosition = (String) comboBoxMemberPosition.getSelectionModel().getSelectedItem();
+        String memberKeyCode = textFieldMemberKeyCode.getText();
+                
         Date memberDate = new Date((getYear-1900), (getMonth-1), getDay);
-        memberDAO = new MemberDAO();
-        Member member = new Member(textFieldMemberName.getText(), memberDate, textFieldMemberCURP.getText(), textFieldMemberPhoneNumber.getText(), textFieldMemberInsstitutionalEmail.getText(), textFieldMemberDiscipline.getText(), textFieldMemberGradeStudy.getText(), textFieldMemberAreaStudy.getText(), (String) comboBoxMemberTypeOfTeaching.getSelectionModel().getSelectedItem(), textFieldMemberLGAC.getText(), textFieldMemberIES.getText(), (String) comboBoxMemberPRODEP.getSelectionModel().getSelectedItem(), (String) comboBoxMemberPosition.getSelectionModel().getSelectedItem(), textFieldMemberKeyCode.getText());
+        
+        Member member = new Member(memberName, memberDate, memberCURP, memberPhoneNumber, memberInstitutionalEmail, memberDiscipline, memberGradeStudy, memberAreaStudy, memberTypeOfTeaching, memberLGAC, memberIES, memberPRODEP, memberPosition, memberKeyCode);
    
-        //System.out.println(comboBoxMemberTypeOfTeaching.getSelectionModel().getSelectedItem());
-        memberDAO.registerMember(member);
-        //System.out.println(member.toString());
+        MemberDAO memberSentinel = new MemberDAO();
+        Member memberConsult;
+        memberConsult = memberSentinel.consultMember(memberName);        
+        String memberNameConsult = memberConsult.getFullName();
+        
+        if(!memberName.equals(memberNameConsult)){
+            this.memberList.add(member);
+            memberDAO.registerMember(member);
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("Confirmacion");
+            alert.setContentText("El miembro ha sido registrado exitosamente");
+            alert.showAndWait();
+            }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Error");
+            alert.setContentText("El miembro ya existe");
+            alert.showAndWait();
+        }
+        
     }
+    
+    @FXML
+    void cancelOnAction(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmación de cancelación");
+        alert.setContentText("¿Desea cancelar el registro?");
+        alert.showAndWait();
+        
+        Stage stage = (Stage) buttonCancel.getScene().getWindow();
+        stage.close();
+    }
+
+    
 }

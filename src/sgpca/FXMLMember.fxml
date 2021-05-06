@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="850.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="sgpca.ControllerMember">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sgpca.ControllerMember">
     <children>
       <AnchorPane prefHeight="55.0" prefWidth="850.0" style="-fx-background-color: #000000;">
          <children>
@@ -34,7 +34,7 @@
       </AnchorPane>
       <AnchorPane layoutX="43.0" layoutY="141.0" prefHeight="540.0" prefWidth="790.0" style="-fx-background-color: #7F8C8D;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
          <children>
-            <Button layoutX="4.0" layoutY="495.0" mnemonicParsing="false" style="-fx-font-weight: bold; -fx-font-size: 18px;" text="Cancelar" />
+            <Button fx:id="buttonCancel" layoutX="4.0" layoutY="495.0" mnemonicParsing="false" onAction="#cancelOnAction" style="-fx-font-weight: bold; -fx-font-size: 18px;" text="Cancelar" />
             <AnchorPane layoutX="13.0" layoutY="12.0" prefHeight="479.0" prefWidth="768.0" style="-fx-background-color: #FDFEFE; -fx-border-color: #000000; -fx-border-width: 3px;">
                <children>
                   <AnchorPane layoutX="3.0" layoutY="2.0" prefHeight="42.0" prefWidth="750.0" style="-fx-border-color: #000000; -fx-border-width: 1px;" AnchorPane.bottomAnchor="440.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -59,7 +59,7 @@
                   <Label layoutX="16.0" layoutY="273.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Área de estudios:" />
                   <TextField fx:id="textFieldMemberCURP" layoutX="242.0" layoutY="110.0" prefHeight="25.0" prefWidth="500.0" promptText="CABJ01721HVZLNQO3" />
                   <TextField fx:id="textFieldMemberPhoneNumber" layoutX="241.0" layoutY="142.0" prefHeight="25.0" prefWidth="500.0" promptText="2288665544" />
-                  <TextField fx:id="textFieldMemberInsstitutionalEmail" layoutX="241.0" layoutY="171.0" prefHeight="25.0" prefWidth="500.0" promptText="zs19014035@estudiantes.uv.mx" />
+                  <TextField fx:id="textFieldMemberInstitutionalEmail" layoutX="241.0" layoutY="171.0" prefHeight="25.0" prefWidth="500.0" promptText="zs19014035@estudiantes.uv.mx" />
                   <TextField fx:id="textFieldMemberDiscipline" layoutX="241.0" layoutY="203.0" prefHeight="25.0" prefWidth="500.0" promptText="Maestría" />
                   <TextField fx:id="textFieldMemberGradeStudy" layoutX="241.0" layoutY="237.0" prefHeight="25.0" prefWidth="500.0" promptText="Maestría" />
                   <TextField fx:id="textFieldMemberAreaStudy" layoutX="241.0" layoutY="270.0" prefHeight="25.0" prefWidth="500.0" promptText="Inteligencia artificial" />
