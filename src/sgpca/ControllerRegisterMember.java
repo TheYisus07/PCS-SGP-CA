@@ -13,15 +13,17 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import domain.Member;
+import java.util.Optional;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
 /**
  *
  * @author Javier Blas
  */
-public class ControllerMember implements Initializable {
+public class ControllerRegisterMember implements Initializable {
     
     private MemberDAO memberDAO; 
     
@@ -141,11 +143,11 @@ public class ControllerMember implements Initializable {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmación de cancelación");
         alert.setContentText("¿Desea cancelar el registro?");
-        alert.showAndWait();
-        
-        Stage stage = (Stage) buttonCancel.getScene().getWindow();
-        stage.close();
+        Optional<ButtonType> aceptCancel = alert.showAndWait();
+        if(aceptCancel.get()==ButtonType.OK){
+            Stage stage = (Stage) buttonCancel.getScene().getWindow();
+            stage.close();
+        }  
     }
-
     
 }
