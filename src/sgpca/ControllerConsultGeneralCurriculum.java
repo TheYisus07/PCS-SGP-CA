@@ -24,8 +24,8 @@ import javafx.stage.Stage;
  *
  * @author Javier Blas
  */
-public class ControllerConsultMemberList implements Initializable {
-    
+public class ControllerConsultGeneralCurriculum implements Initializable {
+
     /**
      * Initializes the controller class.
      * @param url
@@ -33,13 +33,13 @@ public class ControllerConsultMemberList implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+     
     }    
     
     @FXML
-    void OpenRegisterMemberGUI(ActionEvent event) {
+    void OpenMemberListGUI(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("FXMLRegisterMember.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLConsultMemberList.fxml"));
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             
@@ -47,7 +47,7 @@ public class ControllerConsultMemberList implements Initializable {
             stage.setScene(scene);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ControllerConsultMemberList.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ControllerConsultGeneralCurriculum.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
