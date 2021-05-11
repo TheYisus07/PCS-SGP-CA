@@ -227,7 +227,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="68.0" prefWidth="305.0" style="-fx-background-color: #000000;" styleClass="lateralMenuButton" stylesheets="@StyleLateralMenu.css" text="EVENTOS " textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#event" prefHeight="68.0" prefWidth="305.0" style="-fx-background-color: #000000;" styleClass="lateralMenuButton" stylesheets="@StyleLateralMenu.css" text="EVENTOS " textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
