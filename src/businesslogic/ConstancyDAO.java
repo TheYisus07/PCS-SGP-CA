@@ -1,6 +1,7 @@
 package businesslogic;
 
-import dataaccess.Conection;
+
+import dataaccess.Conexion;
 import domain.Constancy;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,8 +19,7 @@ import java.util.logging.Logger;
  */
 public class ConstancyDAO implements IConstancyDAO {
     
-    private final Conection connection = new Conection();
-
+    private final Conexion connection = new Conexion();
     @Override
     public ArrayList<Constancy> consultConstancyList() {
         ArrayList<Constancy> arrayListConstancys = new ArrayList<>();

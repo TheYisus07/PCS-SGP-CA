@@ -1,6 +1,7 @@
 package businesslogic;
 
-import dataaccess.Conection;
+
+import dataaccess.Conexion;
 import domain.Event;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +18,7 @@ import java.util.logging.Logger;
  */
 
 public class EventDAO implements IEventDAO{
-    private final Conection connection = new Conection();
+    private final Conexion connection = new Conexion();
     
     
     

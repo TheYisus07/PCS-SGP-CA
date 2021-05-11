@@ -1,6 +1,7 @@
 package businesslogic;
 
-import dataaccess.Conection;
+
+import dataaccess.Conexion;
 import domain.Meeting;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class MeetingDAO implements IMeetingDAO{
     
-    private final Conection connection = new Conection();
+    private final Conexion connection = new Conexion();
 
     @Override
     public ArrayList<Meeting> checkMeetingHistory() {
