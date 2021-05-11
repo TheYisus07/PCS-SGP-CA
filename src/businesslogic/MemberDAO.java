@@ -1,6 +1,6 @@
 package businesslogic;
 
-import dataaccess.Conection;
+import dataaccess.Conexion;
 import domain.Member;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -10,20 +10,21 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 /**
  *
  * @author Javier Blas
  */
+
 public class MemberDAO implements IMemberDAO{
     
-    private final Conection connection = new Conection();
+    private final Conexion connection = new Conexion();
     
     @Override
     public ArrayList<Member> consultMemberList() {
+       String query = "SELECT fullName, dateOfBirth, curp, phoneNumber, institutionalMail, discipline, studyGrade, studyArea, typeOfTeaching, lgac, ies, prodepParticipation, position, academicGroup_Keycode FROM member";
         ArrayList<Member> arrayListMembers = new ArrayList<>();     
         try {
-            connection.connect();
-            String query = "SELECT fullName, dateOfBirth, curp, phoneNumber, institutionalMail, discipline, studyGrade, studyArea, typeOfTeaching, lgac, ies, prodepParticipation, position, academicGroup_Keycode FROM member";
             Statement statement = connection.getConnection().createStatement();
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
@@ -63,12 +64,7 @@ public class MemberDAO implements IMemberDAO{
     @Override
     public Member registerMember(Member member) {
         try {
-            connection.connect();
-        } catch (SQLException ex) {
-            Logger.getLogger(MemberDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            String query = ("INSERT INTO member (fullName, dateOfBirth, curp, phoneNumber, institutionalMail, discipline, studyGrade, studyArea, typeOfTeaching, lgac, ies, prodepParticipation, position, academicGroup_Keycode) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            String query = "INSERT INTO member (fullName, dateOfBirth, curp, phoneNumber, institutionalMail, discipline, studyGrade, studyArea, typeOfTeaching, lgac, ies, prodepParticipation, position, academicGroup_Keycode) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement preparedStatement = connection.getConnection().prepareStatement(query);
             preparedStatement.setString(1, member.getFullName());
             preparedStatement.setDate(2, (Date) member.getDateOfBirth());

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="695.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #545454;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControllerObjective">
+   <children>
+      <AnchorPane layoutY="1.0" prefHeight="32.0" prefWidth="695.0" style="-fx-border-color: #545454; -fx-background-color: #e8e8e8;">
+         <children>
+            <Label layoutX="14.0" layoutY="8.0" text="Titulo del objetivo:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelObjectiveTitle" layoutX="146.0" layoutY="7.0" prefHeight="18.0" prefWidth="534.0" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableViewObjectiveSelected" editable="true" layoutX="19.0" layoutY="156.0" prefHeight="209.0" prefWidth="658.0" tableMenuButtonVisible="true">
+        <columns>
+          <TableColumn fx:id="tableColumnObjectiveNumber" minWidth="-1.0" prefWidth="38.4000244140625" text="No." />
+          <TableColumn fx:id="tableColumnObjectiveStrategy" minWidth="-1.0" prefWidth="121.60003662109375" text="Estrategia" />
+            <TableColumn fx:id="tableColumnObjectiveGoal" minWidth="-1.0" prefWidth="156.79998779296875" text="Meta" />
+            <TableColumn fx:id="tableColumnObjectiveAction" editable="false" minWidth="-1.0" prefWidth="156.0" sortable="false" text="Acción" />
+            <TableColumn fx:id="tableColumnObjectiveResult" minWidth="-1.0" prefWidth="183.19998779296873" text="Resultado" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button fx:id="buttonCloseWindow" layoutX="600.0" layoutY="398.0" mnemonicParsing="false" onAction="#closeWindowObjective" prefHeight="35.0" text="CERRAR ">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <AnchorPane layoutX="1.0" layoutY="30.0" prefHeight="126.0" prefWidth="695.0">
+         <children>
+            <Label layoutX="16.0" layoutY="6.0" text="Descripción:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelObjectiveDescription" alignment="TOP_LEFT" layoutX="16.0" layoutY="29.0" prefHeight="88.0" prefWidth="658.0" textAlignment="JUSTIFY" wrapText="true" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
