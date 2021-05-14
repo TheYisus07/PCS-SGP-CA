@@ -65,10 +65,10 @@
                   <TextField fx:id="textFieldMemberAreaStudy" layoutX="241.0" layoutY="270.0" prefHeight="25.0" prefWidth="500.0" promptText="Inteligencia artificial" />
                   <TextField fx:id="textFieldMemberLGAC" layoutX="239.0" layoutY="332.0" prefHeight="25.0" prefWidth="500.0" promptText="Innovación..." />
                   <TextField fx:id="textFieldMemberIES" layoutX="238.0" layoutY="363.0" prefHeight="25.0" prefWidth="500.0" promptText="Si/No" />
-                  <TextField fx:id="textFieldMemberKeyCode" layoutX="237.0" layoutY="424.0" prefHeight="25.0" prefWidth="500.0" promptText="JDOEIJ804" />
                   <ComboBox fx:id="comboBoxMemberPRODEP" layoutX="238.0" layoutY="393.0" prefHeight="25.0" prefWidth="263.0" promptText="Seleccione una opción" />
                   <ComboBox fx:id="comboBoxMemberTypeOfTeaching" layoutX="240.0" layoutY="300.0" prefHeight="25.0" prefWidth="258.0" promptText="Seleccione una opción" />
                   <DatePicker fx:id="datePickerMemberDateOfBirth" layoutX="242.0" layoutY="75.0" />
+                  <Label fx:id="labelMemberKeyCode" layoutX="238.0" layoutY="423.0" prefHeight="17.0" prefWidth="125.0" text="JDOEIJ804" />
                </children>
             </AnchorPane>
          </children>

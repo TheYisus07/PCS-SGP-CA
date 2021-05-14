@@ -44,14 +44,25 @@ public class MemberDAO implements IMemberDAO{
         Member member = new Member();
         try {
             connection.connect();
-            String query = "SELECT FullName, CURP, academicGroup_Keycode FROM member WHERE FullName = ?";
+            String query = "SELECT fullName, dateOfBirth, curp, phoneNumber, institutionalMail, discipline, studyGrade, studyArea, typeOfTeaching, lgac, ies, prodepParticipation, position, academicGroup_Keycode FROM member WHERE FullName = ?";
             PreparedStatement preparedStatement = connection.getConnection().prepareStatement(query);
             preparedStatement.setString(1, memberFullName);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 member = new Member();
-                member.setFullName(resultSet.getString("FullName"));                    
+                member.setFullName(resultSet.getString("FullName"));
+                member.setDateOfBirth(resultSet.getDate("DateOfBirth"));
                 member.setCurp(resultSet.getString("CURP"));
+                member.setPhoneNumber(resultSet.getString("PhoneNumber"));
+                member.setInstitutionalMail(resultSet.getString("InstitutionalMail"));
+                member.setDiscipline(resultSet.getString("Discipline"));
+                member.setStudyGrade(resultSet.getString("StudyGrade"));
+                member.setStudyArea(resultSet.getString("StudyArea"));
+                member.setTypeOfTeaching(resultSet.getString("TypeOfTeaching"));
+                member.setLgac(resultSet.getString("Lgac"));
+                member.setIes(resultSet.getString("Ies"));
+                member.setProdepParticipation(resultSet.getString("ProdepParticipation"));
+                member.setPosition(resultSet.getString("Position"));
                 member.setKeycodeAcademicGroup(resultSet.getString("academicGroup_Keycode")); 
             }  
         } catch (SQLException ex) {

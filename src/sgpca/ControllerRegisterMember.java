@@ -17,6 +17,7 @@ import java.util.Optional;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -52,8 +53,9 @@ public class ControllerRegisterMember implements Initializable {
     private TextField textFieldMemberLGAC;
     @FXML
     private TextField textFieldMemberIES;
+    
     @FXML
-    private TextField textFieldMemberKeyCode;
+    private Label labelMemberKeyCode;
     
     @FXML
     private DatePicker datePickerMemberDateOfBirth;
@@ -68,6 +70,7 @@ public class ControllerRegisterMember implements Initializable {
         fillComboBoxWihtMemberPosition();
         fillComboBoxWihtMemberTypeOfTeaching();
         fillComboBoxWihtMemberPRODEP();
+        
         memberList = FXCollections.observableArrayList();
     }    
     
@@ -109,7 +112,7 @@ public class ControllerRegisterMember implements Initializable {
         String memberIES = textFieldMemberIES.getText();
         String memberPRODEP = (String) comboBoxMemberPRODEP.getSelectionModel().getSelectedItem();
         String memberPosition = (String) comboBoxMemberPosition.getSelectionModel().getSelectedItem();
-        String memberKeyCode = textFieldMemberKeyCode.getText();
+        String memberKeyCode = labelMemberKeyCode.getText();
                 
         Date memberDate = new Date((getYear-1900), (getMonth-1), getDay);
         
