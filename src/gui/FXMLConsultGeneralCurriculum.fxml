@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="850.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gui.ControllerConsultGeneralCurriculum">
+   <children>
+      <AnchorPane prefHeight="55.0" prefWidth="850.0" style="-fx-background-color: #000000;" />
+      <Label layoutX="31.0" layoutY="7.0" prefHeight="50.0" prefWidth="266.0" style="-fx-font-weight: bold; -fx-font-size: 20px;" text="Currículum del CA: Edición " textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="79.0" style="-fx-font-weight: bold; -fx-font-size: 30px;" text="INFORMACIÓN CURRICULLAR" />
+      <Button fx:id="buttonEditGeneralCurriculum" layoutX="549.0" layoutY="83.0" mnemonicParsing="false" style="-fx-font-weight: bold; -fx-font-size: 18px;" text="Editar" />
+      <Button fx:id="buttonMemberList" layoutX="650.0" layoutY="82.0" mnemonicParsing="false" onAction="#OpenMemberListGUI" style="-fx-font-weight: bold; -fx-font-size: 18px;" text="Lista de miembros" />
+      <Button fx:id="buttonExitGeneralCurriculum1" layoutX="9.0" layoutY="652.0" mnemonicParsing="false" style="-fx-font-weight: bold; -fx-font-size: 18px;" text="Salir" />
+      <AnchorPane layoutX="86.0" layoutY="140.0" prefHeight="507.0" prefWidth="790.0" style="-fx-background-color: #D6DBDF;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+         <children>
+            <Button fx:id="buttonConsultEvidences" layoutX="614.0" layoutY="8.0" mnemonicParsing="false" style="-fx-font-weight: bold; -fx-font-size: 18px;" text="Producción" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
