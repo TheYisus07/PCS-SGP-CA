@@ -62,7 +62,13 @@ public class ControllerConsultConstancyList implements Initializable {
     
     public void closeWindow(ActionEvent event){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("FXMLConsultEvent.fxml"));
+            FXMLLoader fXMLLoader = new FXMLLoader();
+            fXMLLoader.setLocation(getClass().getResource("FXMLConsultEvent.fxml"));
+            fXMLLoader.load();
+            ControllerConsultEvent controllerConsultEvent = fXMLLoader.getController();
+            String eventTitle = eventObject.getTittle();
+            controllerConsultEvent.getEventTitleSelected(controllerConsultConstancyList, eventTitle);
+            Parent root = fXMLLoader.getRoot();
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             stage.hide();

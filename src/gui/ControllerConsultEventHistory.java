@@ -27,6 +27,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -56,6 +57,8 @@ public class ControllerConsultEventHistory implements Initializable {
 
     @FXML
     private Button ScheduleEventButton;
+    
+    @FXML
     
     
 
@@ -126,6 +129,8 @@ public class ControllerConsultEventHistory implements Initializable {
             stage.close();
         }
     }
+    
+    
         
 
     /**

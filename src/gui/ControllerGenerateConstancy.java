@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -107,8 +102,20 @@ public class ControllerGenerateConstancy implements Initializable {
                 contenido.beginText();
                 contenido.setFont(PDType1Font.HELVETICA, 11);
                 contenido.newLineAtOffset(20, pagina.getMediaBox().getHeight()-52);
+                contenido.showText("otorga la presente");
+                contenido.newLineAtOffset(00, -20);
+                contenido.showText("CONSTANCIA");
+                contenido.newLineAtOffset(00, -20);
+                contenido.showText("a:");
+                contenido.newLineAtOffset(00, -20);
+                contenido.showText("Por haber concluido satisfactoriamente");
+                contenido.newLineAtOffset(00, -20);
+                contenido.showText("El evento:");
+                contenido.newLineAtOffset(00, -20);
                 contenido.showText(recognitionType);
-                contenido.setFont(PDType1Font.COURIER, 11);
+                contenido.newLineAtOffset(00, -20);
+                contenido.showText("Valor curricular 30 horas");
+                /*contenido.setFont(PDType1Font.COURIER, 11);
                 contenido.newLineAtOffset(00, -20);
                 contenido.showText(description);
                 contenido.newLineAtOffset(00, -20);
@@ -119,7 +126,7 @@ public class ControllerGenerateConstancy implements Initializable {
                 contenido.showText(InstitutionalMailRedPient);
                 contenido.newLineAtOffset(00, -20);
                 contenido.showText(regulatoryNote);
-                contenido.newLineAtOffset(00, -20);
+                contenido.newLineAtOffset(00, -20);*/
             }
             documento.save("C:\\Users\\INNOVA TEC\\Documents\\PDFPrueba\\" + recognitionType + ".pdf");
         }catch(IOException x){

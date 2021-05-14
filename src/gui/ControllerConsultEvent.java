@@ -36,6 +36,7 @@ import javafx.stage.Stage;
 public class ControllerConsultEvent implements Initializable {
     private ControllerConsultEventHistory controllerConsultEventHistory;
     private ControllerConsultEvent controllerConsultEvent;
+    private ControllerConsultConstancyList controllerConsultConstancyList;
     
     @FXML
     private Label TitleLabel;
@@ -99,6 +100,31 @@ public class ControllerConsultEvent implements Initializable {
         TypeLabel.setText(type + "");
         ResponsableLabel.setText(responsable + "");
         this.controllerConsultEventHistory = controllerConsultEventHistory;
+        
+    }
+    
+    public void getEventTitleSelected(ControllerConsultConstancyList controllerConsultConstancyList, String eventTitle){
+        TitleLabel.setText(eventTitle );
+        
+        EventDAO eventDAO = new EventDAO();
+        Event eventConsulted;
+        eventConsulted = eventDAO.consultEvent(eventTitle);
+        String responsable = eventConsulted.getResponsable();
+        String type = eventConsulted.getType();
+        String place = eventConsulted.getPlace();
+        String privacy = eventConsulted.getPrivacy();
+        Date registrationDateAUX = eventConsulted.getRegistrationDate();
+        Date eventDateAUX = eventConsulted.getEventDate();
+        String registrationDate = (new SimpleDateFormat("yyyy-MM-dd").format(registrationDateAUX));
+        String eventDate = (new SimpleDateFormat("yyyy-MM-dd").format(eventDateAUX));
+        
+        RegistrationDateLabel.setText(registrationDate);
+        EventDateLabel.setText(eventDate);
+        PlaceLabel.setText(place );
+        PrivacityLabel.setText(privacy );
+        TypeLabel.setText(type);
+        ResponsableLabel.setText(responsable );
+        this.controllerConsultConstancyList = controllerConsultConstancyList;
         
     }
     

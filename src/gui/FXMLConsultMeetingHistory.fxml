@@ -20,20 +20,20 @@
       </AnchorPane>
       <AnchorPane layoutX="46.0" layoutY="89.0" prefHeight="611.0" prefWidth="757.0" style="-fx-background-color: #e8e8e8;">
          <children>
-            <AnchorPane layoutX="96.0" layoutY="82.0" prefHeight="521.0" prefWidth="661.0" style="-fx-background-color: #c9c9c9; -fx-border-color: #ffffff;">
+            <AnchorPane layoutX="114.0" layoutY="94.0" prefHeight="517.0" prefWidth="596.0" style="-fx-background-color: #c9c9c9; -fx-border-color: #ffffff;">
                <children>
-                  <TableView fx:id="tableViewEvents" layoutX="60.0" layoutY="83.0" prefHeight="438.0" prefWidth="542.0">
-                    <columns>
-                      <TableColumn fx:id="tableColumnEventTypes" prefWidth="109.0" text="Tipo" />
-                      <TableColumn fx:id="tableColumnEventTitles" prefWidth="336.0" text="Titulo" />
-                      <TableColumn fx:id="tableColumnEventDates" prefWidth="99.0" text="Fecha" />
-                    </columns>
+                  <TableView fx:id="tableViewMeetings" layoutX="26.0" layoutY="64.0" prefHeight="453.0" prefWidth="545.0">
+                     <columns>
+                        <TableColumn fx:id="tableColumnMeetingProjects" prefWidth="228.0" text="Proyecto" />
+                        <TableColumn fx:id="tableColumnMeetingDate" prefWidth="113.0" text="Fecha" />
+                        <TableColumn fx:id="tableColumnMeetingResponsable" prefWidth="203.0" text="Responsable" />
+                     </columns>
                   </TableView>
                </children>
             </AnchorPane>
-            <Button fx:id="ExitEventHistoryButton" layoutX="-27.0" layoutY="545.0" mnemonicParsing="false" onAction="#getOutOfEventHistory" prefHeight="37.0" prefWidth="103.0" text="SALIR" />
-            <Button fx:id="ScheduleEventButton" layoutX="608.0" layoutY="27.0" mnemonicParsing="false" onAction="#OpenScheduleEventGUI" prefHeight="37.0" prefWidth="135.0" text="AGENDAR EVENTO" />
-            <Label layoutX="24.0" layoutY="20.0" text="HISTORIAL DE EVENTOS">
+            <Button fx:id="ExitMeetingHistoryButton" layoutX="6.0" layoutY="547.0" mnemonicParsing="false" onAction="#getOutOfMeetingHistory" prefHeight="37.0" prefWidth="103.0" text="SALIR" />
+            <Button fx:id="ScheduleMeetingButton" layoutX="608.0" layoutY="27.0" mnemonicParsing="false" onAction="#OpenScheduleMeetingGUI" prefHeight="37.0" prefWidth="135.0" text="AGENDAR REUNIÓN" />
+            <Label layoutX="24.0" layoutY="20.0" text="HISTORIAL DE REUNIONES">
                <font>
                   <Font name="System Bold" size="31.0" />
                </font>
