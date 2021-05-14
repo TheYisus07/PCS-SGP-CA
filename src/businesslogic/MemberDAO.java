@@ -1,6 +1,7 @@
 package businesslogic;
 
 import dataacces.Conection;
+import dataaccess.Conexion;
 import domain.Member;
 import java.sql.Connection;
 import java.sql.Date;
@@ -18,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class MemberDAO implements IMemberDAO{
     
-    private final Conection connection = new Conection();
+    private final Conexion connection = new Conexion();
     
     @Override
     public ArrayList<Member> consultMemberList() {
@@ -124,3 +125,5 @@ public class MemberDAO implements IMemberDAO{
         return result;
     }
 }
+
+

@@ -1,4 +1,4 @@
- package sgpca;
+package gui;
 
 import businesslogic.MemberDAO;
 import java.net.URL;

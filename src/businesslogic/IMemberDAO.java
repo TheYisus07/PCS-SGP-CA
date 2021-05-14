@@ -10,11 +10,6 @@ import java.util.ArrayList;
 public interface IMemberDAO {
     public ArrayList<Member> consultMemberList();
     public Member consultMember(String fullName);
-    /**
-     *
-     * @param member
-     * @return
-     */
     public Member registerMember (Member member);
     public int removeMember (String fullName, String curp);
 }

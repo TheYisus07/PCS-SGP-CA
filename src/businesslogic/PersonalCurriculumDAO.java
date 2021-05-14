@@ -1,6 +1,7 @@
 package businesslogic;
 
 import dataacces.Conection;
+import dataaccess.Conexion;
 import domain.PersonalCurriculum;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -15,8 +16,7 @@ import java.util.logging.Logger;
  */
 public class PersonalCurriculumDAO implements IPersonalCurriculumDAO{
     
-    private final Conection connection = new Conection();
-
+    private final Conexion connection = new Conexion();
     /**
      *
      * @param personalfullName

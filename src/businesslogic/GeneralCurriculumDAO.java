@@ -1,6 +1,7 @@
 package businesslogic;
 
 import dataacces.Conection;
+import dataaccess.Conexion;
 import domain.GeneralCurriculum;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -15,7 +16,7 @@ import java.util.logging.Logger;
  */
 public class GeneralCurriculumDAO implements IGeneralCurriculumDAO{
 
-    private Conection connection;
+    private final Conexion connection = new Conexion();
 
     @Override
     public GeneralCurriculum consultGeneralCurriculum(String keycode) {
